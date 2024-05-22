@@ -46,7 +46,6 @@ def create_user():
         user.save()
         flash("Usuario registrado exitosamente", "success")
         return redirect(url_for("user.list_users"))
-    # Llamamos a la vista de registro
     return user_view.registro()
 
 
