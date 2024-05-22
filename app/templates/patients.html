@@ -17,7 +17,7 @@
                                     <a href="{{ url_for('patient.update_patient', id=patient.id) }}" 
                                     class="button is-info">Editar</a>
                                     <a href="{{ url_for('patient.delete_patient', id=patient.id) }}" 
-                                    class="button is-danger">Eliminar</a>
+                                    class="button is-danger" onclick="return confirmDelete()">Eliminar</a>
                                 {% endif %}
                             </div>
                         </div>
@@ -26,4 +26,11 @@
             </div>
         {% endfor %}
     </div>
+
+<script>
+function confirmDelete() {
+    return confirm('¿Estás seguro de que deseas eliminar este paciente?');
+}
+</script>
+
 {% endblock %}
